@@ -32,6 +32,6 @@ $factory->define(Category::class, function (Faker\Generator $faker) {
    
     return [
     	'name' => $faker->word,
-    	'description' => $faker->paragraph(1)
+    	'description' => $faker->paragraph(1),
     ];
 });
