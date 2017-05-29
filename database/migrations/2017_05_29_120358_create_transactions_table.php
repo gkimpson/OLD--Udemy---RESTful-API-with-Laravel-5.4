@@ -14,8 +14,11 @@ class CreateTransactionsTable extends Migration
     public function up()
     {
         Schema::create('transactions', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->integer('category_id')->unsigned();
+            $table->integer('product_id')->unsigned();
+
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 
